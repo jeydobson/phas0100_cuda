@@ -34,7 +34,7 @@ void negate(float *devArray)
   // HANDSON 1.7 Get the index of this block in the grid
   int idx = threadIdx.x;
   // HANDSON 1.8 Negate the value at that index
-  devArray[idx] = -1. * devArray[idx]
+  devArray[idx] = -1. * devArray[idx];
 }
 
 __global__
@@ -57,6 +57,7 @@ int main( )
   float *hostOutput = (float *) malloc(sizeChar);
 
   // HANDSON 1.1 Alocate the memory for the array on the device
+  float *devArray;
   myCudaCheck(
     cudaMalloc(&devArray, sizeChar)
              );
